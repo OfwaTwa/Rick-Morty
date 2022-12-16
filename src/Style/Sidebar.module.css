@@ -8,6 +8,7 @@
     border-right: 2px solid rgba(47, 3, 3, 0.9);
     transition: .4s ease-in-out;
     position: fixed;
+    z-index: 1;
 }
 
 .sidebar.open {

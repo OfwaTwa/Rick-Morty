@@ -24,7 +24,6 @@ const ListaPersonajes = (props) => {
         const { results, info, prev } = r.data;
         setState({ data: results, siguiente: info.next, anterior: info.prev });
       });
-      console.log(state);
     } else {
       console.log("error");
     }
@@ -46,8 +45,11 @@ const ListaPersonajes = (props) => {
 
   return (
     <div className={style.contenedor_principal}>
-      <h1 className={style.titulo}>Personajes</h1>
-      <div className={style.contenedor_tarjeta}>
+      <div className="footer">
+        <h1 className={style.titulo}>Personajes</h1>
+      </div>
+      
+      <div className={style.contenedor_card}>
         {state.data.map((personas, i) => {
           return (
             <div key={i}>
@@ -58,10 +60,11 @@ const ListaPersonajes = (props) => {
                 </div>
                 <div className={`${style.face} ${style.back}`}>
                   <h3>{personas.name}</h3>
+                  <span className={style.status}> <span className={personas.status === "Alive" ? style.status_icono : null }>a</span>Alive-{personas.species}</span>
                   <p>
-                    Locación: <br/>
-                    {personas.location.name} <br/>
-                    Genero: 
+                    Locación: <br />
+                    {personas.location.name} <br />
+                    Genero:
                     {personas.gender}
                   </p>
                   <p>{personas.state}</p>
