@@ -1,10 +1,32 @@
 .contenedor_principal {
-    margin-left: 15vh;
+    margin-left: 25vh;
+}
+
+.status {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.status_icono {
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-right: 0.375rem;
+    background: rgb(85, 204, 68);
+    border-radius: 50%;
+}
+
+
+.contenedor_principal .contenedor_card {
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    z-index: 2;
 }
 
 .contenedor_principal .card {
     position: relative;
-    width: 300px;
+    max-width: 350px;
     height: 350px;
     margin: 20px;
 }
@@ -44,7 +66,7 @@
 
 .contenedor_principal .card .back {
     transform: perspective(600px) rotateY(180deg);
-    background-color: rgb(3, 35, 54);
+    background-color: rgba(10, 10, 10, .65);
     padding: 15px;
     color: #f3f3f3;
     display: flex;
