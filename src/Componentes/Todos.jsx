@@ -5,6 +5,8 @@ import { getPersonajes } from "../API/ConsumirApi";
 import axios from "axios";
 import style from "../Style/Todos.module.css";
 import Button from "@mui/material/Button";
+import MaleIcon from "@mui/icons-material/Male";
+import FemaleIcon from '@mui/icons-material/Female';
 
 const ListaPersonajes = (props) => {
   const [state, setState] = useState({ data: [], siguiente: "", anterior: "" });
@@ -45,10 +47,6 @@ const ListaPersonajes = (props) => {
 
   return (
     <div className={style.contenedor_principal}>
-      <div className="footer">
-        <h1 className={style.titulo}>Personajes</h1>
-      </div>
-      
       <div className={style.contenedor_card}>
         {state.data.map((personas, i) => {
           return (
@@ -60,14 +58,54 @@ const ListaPersonajes = (props) => {
                 </div>
                 <div className={`${style.face} ${style.back}`}>
                   <h3>{personas.name}</h3>
-                  <span className={style.status}> <span className={personas.status === "Alive" ? style.status_icono : null }>a</span>Alive-{personas.species}</span>
+
+                  {personas.status === "Alive" ? (
+                    <span className={style.status}>
+                      <span
+                        className={style.status_icono}
+                        style={{ background: "green" }}
+                      />
+                      {personas.status} - {personas.species}
+                    </span>
+                  ) : null}
+
+                  {personas.status === "Dead" ? (
+                    <span className={style.status}>
+                      <span
+                        className={style.status_icono}
+                        style={{ background: "red" }}
+                      />
+                      {personas.status} - {personas.species}
+                    </span>
+                  ) : null}
+
+                  {personas.status === "unknown" ? (
+                    <span className={style.status}>
+                      <span
+                        className={style.status_icono}
+                        style={{ background: "gray" }}
+                      />
+                      {personas.status} - {personas.species}
+                    </span>
+                  ) : null}
                   <p>
-                    Locación: <br />
-                    {personas.location.name} <br />
-                    Genero:
-                    {personas.gender}
+                    Genero: {personas.gender}{" "}
+                    {personas.gender === "Male" ? (
+                      <MaleIcon fontSize="small" color="primary" />
+                    ) : <FemaleIcon fontSize="small" color="secondary" /> }
                   </p>
-                  <p>{personas.state}</p>
+                  <p>
+                    Ubicación actual: <br /> {personas.location.name}
+                  </p>
+                  <p>
+                    Lugar de origen: <br /> {personas.origin.name}
+                  </p>
+                  <div className={style.fecha_creacion}>
+                    <p>
+                      Fecha de creación: <br />
+                      {personas.created}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
