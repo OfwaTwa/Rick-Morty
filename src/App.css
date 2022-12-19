@@ -11,3 +11,14 @@ body {
     background-color: rgb(10, 26, 2);
     font-family: "Roboto","Bradley Hand ITC";
 }
+
+body::-webkit-scrollbar {
+    width: 9px;
+    background: rgb(5, 13, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(5, 107, 22);
+    border-radius: 10px;
+    border-right: 2px solid;
+}

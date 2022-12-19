@@ -6,7 +6,7 @@ import axios from "axios";
 import style from "../Style/Todos.module.css";
 import Button from "@mui/material/Button";
 import MaleIcon from "@mui/icons-material/Male";
-import FemaleIcon from '@mui/icons-material/Female';
+import FemaleIcon from "@mui/icons-material/Female";
 
 const ListaPersonajes = (props) => {
   const [state, setState] = useState({ data: [], siguiente: "", anterior: "" });
@@ -58,41 +58,45 @@ const ListaPersonajes = (props) => {
                 </div>
                 <div className={`${style.face} ${style.back}`}>
                   <h3>{personas.name}</h3>
+                  <b>
+                    {personas.status === "Alive" ? (
+                      <span className={style.status}>
+                        <span
+                          className={style.status_icono}
+                          style={{ background: "green" }}
+                        />
+                        {personas.status} - {personas.species}
+                      </span>
+                    ) : null}
 
-                  {personas.status === "Alive" ? (
-                    <span className={style.status}>
-                      <span
-                        className={style.status_icono}
-                        style={{ background: "green" }}
-                      />
-                      {personas.status} - {personas.species}
-                    </span>
-                  ) : null}
+                    {personas.status === "Dead" ? (
+                      <span className={style.status}>
+                        <span
+                          className={style.status_icono}
+                          style={{ background: "red" }}
+                        />
+                        {personas.status} - {personas.species}
+                      </span>
+                    ) : null}
 
-                  {personas.status === "Dead" ? (
-                    <span className={style.status}>
-                      <span
-                        className={style.status_icono}
-                        style={{ background: "red" }}
-                      />
-                      {personas.status} - {personas.species}
-                    </span>
-                  ) : null}
-
-                  {personas.status === "unknown" ? (
-                    <span className={style.status}>
-                      <span
-                        className={style.status_icono}
-                        style={{ background: "gray" }}
-                      />
-                      {personas.status} - {personas.species}
-                    </span>
-                  ) : null}
+                    {personas.status === "unknown" ? (
+                      <span className={style.status}>
+                        <span
+                          className={style.status_icono}
+                          style={{ background: "gray" }}
+                        />
+                        {personas.status} - {personas.species}
+                      </span>
+                    ) : null}
+                  </b>
                   <p>
                     Genero: {personas.gender}{" "}
                     {personas.gender === "Male" ? (
                       <MaleIcon fontSize="small" color="primary" />
-                    ) : <FemaleIcon fontSize="small" color="secondary" /> }
+                    ) : null}
+                    {personas.gender === "Female" ? (
+                      <FemaleIcon fontSize="small" color="primary" />
+                    ) : null}
                   </p>
                   <p>
                     Ubicación actual: <br /> {personas.location.name}
@@ -112,12 +116,12 @@ const ListaPersonajes = (props) => {
           );
         })}
       </div>
-
+      
       <div className={style.contenedor_botones}>
         <Button
           variant="outlined"
           className={style.boton_siguiente}
-          style={{ color: "white", borderColor: "green", background: "green" }}
+          style={{ color: "white", borderColor: "black", background: "green" }}
           onClick={() => {
             prevPage();
           }}
@@ -127,7 +131,7 @@ const ListaPersonajes = (props) => {
         <Button
           variant="outlined"
           className={style.boton_anterior}
-          style={{ color: "white", borderColor: "green", background: "green" }}
+          style={{ color: "white", borderColor: "black", background: "green" }}
           onClick={() => {
             nextPage();
           }}

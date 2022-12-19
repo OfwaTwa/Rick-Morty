@@ -1,3 +1,7 @@
+.contenedor_principal {
+    margin-bottom: 4vh;
+}
+
 .status {
     display: flex;
     -webkit-box-align: center;
@@ -13,7 +17,7 @@
 }   
 
 .contenedor_principal .contenedor_card {
-    margin-left: 20vh;
+    margin-left: 15vh;
     margin-right: 15vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,4 +97,11 @@
 
 .contenedor_principal .card:hover .back {
     transform: perspective(600px) rotateY(360deg);
+}
+
+.contenedor_botones {
+    position: fixed;
+    z-index: 2;
+    bottom: 1vh;
+    right: 5vh;
 }
