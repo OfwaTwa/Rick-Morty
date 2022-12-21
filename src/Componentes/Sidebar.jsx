@@ -69,7 +69,7 @@ const Sidebar = (props) => {
               }
               id="2"
             >
-              <ContactsIcon className={style.boton}  />
+              <ContactsIcon className={style.boton} />
               <span>All the characters</span>
             </li>
             <li
@@ -132,7 +132,6 @@ const Sidebar = (props) => {
               id="7"
             >
               <ChatIcon fontSize="small" />
-              <span>Send Feelback</span>
             </li>
           </ul>
         </nav>

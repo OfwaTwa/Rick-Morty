@@ -4,9 +4,10 @@ import { useEffect } from "react";
 import { getPersonajes } from "../API/ConsumirApi";
 import axios from "axios";
 import style from "../Style/Todos.module.css";
-import Button from "@mui/material/Button";
 import MaleIcon from "@mui/icons-material/Male";
 import FemaleIcon from "@mui/icons-material/Female";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 const ListaPersonajes = (props) => {
   const [state, setState] = useState({ data: [], siguiente: "", anterior: "" });
@@ -116,29 +117,24 @@ const ListaPersonajes = (props) => {
           );
         })}
       </div>
-      
-      <div className={style.contenedor_botones}>
-        <Button
-          variant="outlined"
-          className={style.boton_siguiente}
-          style={{ color: "white", borderColor: "black", background: "green" }}
-          onClick={() => {
-            prevPage();
-          }}
-        >
-          Anterior
-        </Button>
-        <Button
-          variant="outlined"
-          className={style.boton_anterior}
-          style={{ color: "white", borderColor: "black", background: "green" }}
-          onClick={() => {
-            nextPage();
-          }}
-        >
-          Siguiente
-        </Button>
-      </div>
+
+      <KeyboardArrowLeftIcon
+        className={style.boton_izquierdo}
+        sx={{ fontSize: 60 }}
+        style={{ color: "white" }}
+        onClick={() => {
+          prevPage();
+        }}
+      />
+
+      <KeyboardArrowRightIcon
+        className={style.boton_derecho}
+        sx={{ fontSize: 60 }}
+        style={{ color: "white" }}
+        onClick={() => {
+          nextPage();
+        }}
+      />
     </div>
   );
 };

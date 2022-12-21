@@ -17,7 +17,8 @@
 }   
 
 .contenedor_principal .contenedor_card {
-    margin-left: 15vh;
+    margin-top: 3vh;
+    margin-left: 20vh;
     margin-right: 15vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -27,6 +28,7 @@
 .contenedor_principal .card {
     position: relative;
     height: 350px;
+    width: 350px;
     margin: 20px;
 }
 
@@ -99,9 +101,15 @@
     transform: perspective(600px) rotateY(360deg);
 }
 
-.contenedor_botones {
+.boton_derecho{
     position: fixed;
     z-index: 2;
-    bottom: 1vh;
+    bottom: 50%;
     right: 5vh;
+}
+
+.boton_izquierdo {
+    position: fixed;
+    bottom: 50%;
+    left: 14vh;
 }
