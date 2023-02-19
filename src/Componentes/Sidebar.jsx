@@ -13,7 +13,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 const Sidebar = (props) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
-
+  
   const clickOpen = () => {
     if (open === true) {
       setOpen(false);
