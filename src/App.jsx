@@ -1,7 +1,7 @@
 import './App.css'
+import CharactersList from './Componentes/AllCharacters'
 import Header from './Componentes/Header'
 import Sidebar from "./Componentes/Sidebar"
-import ListaPersonajes from './Componentes/Todos'
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Sidebar/>
       <Header/>
-      <ListaPersonajes/>
+      <CharactersList/>
     </div>
   )
 }

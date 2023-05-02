@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { getPersonajes } from "../API/ConsumirApi";
+import { getPersonajes } from "../Api/Api";
 import axios from "axios";
 import style from "../Style/Todos.module.css";
 import MaleIcon from "@mui/icons-material/Male";
@@ -9,7 +9,7 @@ import FemaleIcon from "@mui/icons-material/Female";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
-const ListaPersonajes = (props) => {
+const CharactersList = () => {
   const [state, setState] = useState({ data: [], siguiente: "", anterior: "" });
 
   useEffect(() => {
@@ -139,4 +139,4 @@ const ListaPersonajes = (props) => {
   );
 };
 
-export default ListaPersonajes;
+export default CharactersList;
