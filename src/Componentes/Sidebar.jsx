@@ -40,7 +40,7 @@ const Sidebar = (props) => {
 
         <div className={style.logo}>
           <img src={icon} alt="logo" />
-          <h3>Ofwa Twa</h3>
+          <h3>Menu</h3>
         </div>
 
         <nav
@@ -132,6 +132,7 @@ const Sidebar = (props) => {
               id="7"
             >
               <ChatIcon fontSize="small" />
+              <span>About us</span>
             </li>
           </ul>
         </nav>
